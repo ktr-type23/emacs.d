@@ -1,0 +1,6 @@
+/auto-save-list/*
+/backups/*
+/undohist/*
+/url/*
+.*~
+/ac-comphist.dat
