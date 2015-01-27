@@ -170,6 +170,17 @@
 ;; -u オプションをデフォルトで使用する
 (setq diff-switches "-u")
 
+;; multi-shell.el
+;; 複数のshellバッファを持ち切り替えられるようにする
+;; M-x install-elisp-from-emacswiki multi-shell.el
+;; ■使い方
+;; M-x multi-shell-new：新しいshellを立ち上げる
+;; M-x multi-shell-prev:前のshellバッファに切り替える
+;; M-x multi-shell-next:次のshellバッファに切り替える
+(require 'multi-shell)
+;; 指定しない場合は環境変数SHELLのshellが使われる
+;; (setq multi-shell-command "/bin/zsh")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; キーバインド
 
