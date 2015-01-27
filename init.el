@@ -162,6 +162,13 @@
 (setq cua-enable-cua-keys nil) ; デフォルトキーバインドを無効化
 (define-key global-map (kbd "C-x SPC") 'cua-set-rectangle-mark)
 
+;; wdired.el
+;; ディレクトリ内のファイル名をdiredバッファより直接実施する
+(define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
+
+;; M-x diff
+;; -u オプションをデフォルトで使用する
+(setq diff-switches "-u")
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; キーバインド
@@ -198,7 +205,6 @@
   (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
   ;; インストールしたパッケージにロードパスを通して読み込む
   (package-initialize))
-
 
 ;; scala-mode
 ;; list-packageからインストール
@@ -350,10 +356,16 @@
 (when (require 'point-undo nil t)
   ;; (define-key global-map [f5] 'point-undo)
   ;; (define-key global-map [f6] 'point-redo)
-  ;; 筆者のお勧めキーバインド
-  (define-key global-map (kbd "M-[") 'point-undo)
-  (define-key global-map (kbd "M-]") 'point-redo)
+  (define-key global-map (kbd "<f9>") 'point-undo)
+  (define-key global-map (kbd "s-<f9>") 'point-redo)
   )
+
+;; goto-chg.el
+;; M-x install-elisp-from-emacswiki RET goto-chg.el RET
+(require 'goto-chg)
+(define-key global-map (kbd "<f8>") 'goto-last-change)
+(define-key global-map (kbd "s-<f8>") 'goto-last-change)
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; 自動コンパイル
