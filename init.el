@@ -144,7 +144,7 @@
 
 ;;; font
 ;; rictyの場合、横幅が1:2になるのは主に以下のサイズ
-(set-frame-font "ricty-12.5")
+(set-frame-font "ricty-13.5")
 ;; (set-frame-font "ricty-15")
 ;; (set-frame-font "ricty-18")
 (set-fontset-font
