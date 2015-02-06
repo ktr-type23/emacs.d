@@ -167,8 +167,16 @@
 (define-key dired-mode-map "r" 'wdired-change-to-wdired-mode)
 
 ;; M-x diff
-;; -u オプションをデフォルトで使用する
+;; diff を とるときに -u オプションをデフォルトにする
+;; diff 箇所で C-c C-c で
 (setq diff-switches "-u")
+
+;; M-x ediff-files
+;; 2つのファイルの相違点を取り込む(merge)・ハイライト表示する。
+;; Ediff Control Panel 専用フレームを作成しない。
+(setq ediff-window-setup-function 'ediff-setup-window-plain)
+
+
 
 ;; multi-shell.el
 ;; 複数のshellバッファを持ち切り替えられるようにする
